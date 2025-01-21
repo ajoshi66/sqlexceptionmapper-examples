@@ -1,0 +1,32 @@
+Curl commands for Vehicles application
+====
+
+Get all manufacturers
+curl http://localhost:8080/manufacturers
+
+Get specific manufacturer
+curl http://localhost:8080/manufacturers/1
+
+Create manufacturer
+---
+	Without name
+	curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{}"
+	
+	Without address1
+	curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"name\":\"Hyundai Automobiles\"}"
+
+	Without city
+	curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"name\":\"Hyundai Automobiles\", \"address1\":\"Sriperumbudur\"}"
+	
+	Without state (after inserting MAS as city)
+	curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"name\":\"Hyundai Automobiles\", \"address1\":\"Sriperumbudur\", \"city\":\"MAS\"}"
+
+	Without country
+	curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"name\":\"Hyundai Automobiles\", \"address1\":\"Sriperumbudur\", \"city\":\"MAS\", \"state\":\"TN\"}"
+	
+	Without valid city
+	curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"name\":\"Hyundai Automobiles\", \"address1\":\"Sriperumbudur\", \"city\":\"MAS\", \"state\":\"TN\", \"country\":\"IN\"}"
+	
+	Valid post
+	curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"name\":\"Hyundai Automobiles\", \"address1\":\"Sriperumbudur\", \"city\":\"MAS\", \"state\":\"TN\", \"country\":\"IN\"}"
+
