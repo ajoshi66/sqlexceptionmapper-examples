@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.joshi</groupId>
-	<artifactId>vehicles</artifactId>
+	<artifactId>sqlem-mnfr-h2db</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Manufacturers</name>
 	<description>Manufacturers with Spring Data</description>
