@@ -1,0 +1,8 @@
+42122|Column "NAME" not found
+23502|NULL not allowed for column "CITY_CODE"
+23505|Unique index or primary key violation: "TEST.PRIMARY_KEY_1 ON TEST.CITY(CITY_CODE) VALUES ( /* 1 */ 'BLR' )"
+90154|Generated column "TEST.MANUFACTURER.MNFR_ID" cannot be assigned
+23505|Unique index or primary key violation: "TEST.UK_MNFR_NAME_INDEX_1 ON TEST.MANUFACTURER(MNFR_NAME NULLS FIRST) VALUES ( /* 2 */ 'Honda Motors' )"
+23506|Referential integrity constraint violation: "FK_MNFR_CITY: TEST.MANUFACTURER FOREIGN KEY(MNFR_CITY_CODE) REFERENCES TEST.CITY(CITY_CODE) ('FUN')"
+23503|Referential integrity constraint violation: "FK_MNFR_CITY: TEST.MANUFACTURER FOREIGN KEY(MNFR_CITY_CODE) REFERENCES TEST.CITY(CITY_CODE) ('DEL')"
+22001|Value too long for column "CITY_CODE CHARACTER VARYING(5)": "'BLR1234567890' (13)"

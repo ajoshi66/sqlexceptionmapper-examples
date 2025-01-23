@@ -1,0 +1,41 @@
+
+CURL commands for Manufacturers
+
+Get All:
+curl http://localhost:8080/manufacturers
+
+Get specific:
+curl http://localhost:8080/manufacturers/1
+
+Valid POST
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"manufacturerName\":\"Hyundai Cars\",\"address1\":\"Chennai\",\"city\":\"MAS\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+
+
+PUT
+curl -H "Content-Type: application/json" -X PUT http://localhost:8080/manufacturers/1 -d "{\"address1\":\"Safdar Jung\"}"
+
+curl -H "Content-Type: application/json" -X PUT http://localhost:8080/manufacturers/0 -d "{\"manufacturerName\":\"Hyundai Cars\",\"address1\":\"Chennai\",\"city\":\"Chennai\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+
+
+PATCH
+curl -H "Content-Type: application/json" -X PATCH http://localhost:8080/manufacturers/1 -d "{\"address1\":\"Safdar Jung\"}"
+
+DELETE
+curl -H "Content-Type: application/json" -X DELETE http://localhost:8080/manufacturers/0
+
+
+POST with error 1
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"\"manufacturerName\":\"Hyundai Cars\",\"address1\":\"Chennai\",\"city\":\"Chennai\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+
+POST with too long manufacturerName
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"manufacturerName\":\"Hyundai Cars Manufacturer somewhere in south of Inda\",\"address1\":\"Chennai\",\"city\":\"Chennai\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+
+POST with manufacturer id specified
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"id\": 100,\"manufacturerName\":\"Hyundai Cars\",\"address1\":\"Chennai\",\"city\":\"Chennai\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+
+POST with missing manufacturer name
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"address1\":\"Chennai\",\"city\":\"Chennai\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+
+POST with non-existing City code
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"manufacturerName\":\"Hyundai Cars\",\"address1\":\"Chennai\",\"city\":\"XMAS\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+

@@ -1,0 +1,27 @@
+CURL commands for Manufacturers
+
+Get All:
+curl http://localhost:8080/manufacturers
+
+Get specific:
+curl http://localhost:8080/manufacturers/1
+
+Valid POST
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"manufacturerName\":\"Hyundai Cars\",\"address1\":\"Chennai\",\"city\":\"MAS\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+
+
+POST with no field details
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{}"
+
+POST with too long manufacturerName
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"manufacturerName\":\"Hyundai Cars Manufacturer somewhere in south of Inda\",\"address1\":\"Chennai\",\"city\":\"MAS\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+
+POST with missing address1
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"manufacturerName\":\"Hyundai Cars\",\"city\":\"MAS\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+
+POST with missing city
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"manufacturerName\":\"Hyundai Cars\",\"address1\":\"Chennai\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+
+POST with non-existing City code
+curl -H "Content-Type: application/json" -X POST http://localhost:8080/manufacturers -d "{\"manufacturerName\":\"Hyundai Cars\",\"address1\":\"Chennai\",\"city\":\"XMAS\",\"state\":\"Tamilnadu\",\"country\":\"India\"}"
+
